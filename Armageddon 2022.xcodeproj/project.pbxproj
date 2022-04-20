@@ -9,21 +9,31 @@
 /* Begin PBXBuildFile section */
 		FADF0368280FEBD300BBB344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF0367280FEBD300BBB344 /* AppDelegate.swift */; };
 		FADF036A280FEBD300BBB344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF0369280FEBD300BBB344 /* SceneDelegate.swift */; };
-		FADF036C280FEBD300BBB344 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF036B280FEBD300BBB344 /* ViewController.swift */; };
 		FADF036F280FEBD300BBB344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADF036D280FEBD300BBB344 /* Main.storyboard */; };
 		FADF0371280FEBD500BBB344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FADF0370280FEBD500BBB344 /* Assets.xcassets */; };
 		FADF0374280FEBD500BBB344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FADF0372280FEBD500BBB344 /* LaunchScreen.storyboard */; };
+		FADF0380280FFA6900BBB344 /* DestroyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF037F280FFA6900BBB344 /* DestroyViewController.swift */; };
+		FADF0382280FFA8600BBB344 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF0381280FFA8600BBB344 /* SettingsViewController.swift */; };
+		FADF0389280FFAFF00BBB344 /* AsteroidInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF0387280FFAFF00BBB344 /* AsteroidInfoCell.swift */; };
+		FADF038A280FFAFF00BBB344 /* AsteroidInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADF0388280FFAFF00BBB344 /* AsteroidInfoCell.xib */; };
+		FADF038E281004A700BBB344 /* AsteriodInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF038D281004A700BBB344 /* AsteriodInfoViewController.swift */; };
+		FADF03922810096E00BBB344 /* AsteroidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF03912810096E00BBB344 /* AsteroidViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FADF0364280FEBD300BBB344 /* Armageddon 2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Armageddon 2022.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADF0367280FEBD300BBB344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FADF0369280FEBD300BBB344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FADF036B280FEBD300BBB344 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FADF036E280FEBD300BBB344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FADF0370280FEBD500BBB344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FADF0373280FEBD500BBB344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FADF0375280FEBD500BBB344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FADF037F280FFA6900BBB344 /* DestroyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestroyViewController.swift; sourceTree = "<group>"; };
+		FADF0381280FFA8600BBB344 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FADF0387280FFAFF00BBB344 /* AsteroidInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidInfoCell.swift; sourceTree = "<group>"; };
+		FADF0388280FFAFF00BBB344 /* AsteroidInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AsteroidInfoCell.xib; sourceTree = "<group>"; };
+		FADF038D281004A700BBB344 /* AsteriodInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteriodInfoViewController.swift; sourceTree = "<group>"; };
+		FADF03912810096E00BBB344 /* AsteroidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidViewController.swift; sourceTree = "<group>"; };
+		FADF0396281011C300BBB344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +68,34 @@
 			children = (
 				FADF0367280FEBD300BBB344 /* AppDelegate.swift */,
 				FADF0369280FEBD300BBB344 /* SceneDelegate.swift */,
-				FADF036B280FEBD300BBB344 /* ViewController.swift */,
-				FADF036D280FEBD300BBB344 /* Main.storyboard */,
+				FADF038F2810059B00BBB344 /* Cells */,
+				FADF038B280FFB0800BBB344 /* Controllers */,
 				FADF0370280FEBD500BBB344 /* Assets.xcassets */,
+				FADF036D280FEBD300BBB344 /* Main.storyboard */,
 				FADF0372280FEBD500BBB344 /* LaunchScreen.storyboard */,
 				FADF0375280FEBD500BBB344 /* Info.plist */,
 			);
 			path = "Armageddon 2022";
+			sourceTree = "<group>";
+		};
+		FADF038B280FFB0800BBB344 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FADF0381280FFA8600BBB344 /* SettingsViewController.swift */,
+				FADF037F280FFA6900BBB344 /* DestroyViewController.swift */,
+				FADF03912810096E00BBB344 /* AsteroidViewController.swift */,
+				FADF038D281004A700BBB344 /* AsteriodInfoViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FADF038F2810059B00BBB344 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FADF0388280FFAFF00BBB344 /* AsteroidInfoCell.xib */,
+				FADF0387280FFAFF00BBB344 /* AsteroidInfoCell.swift */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADF038A280FFAFF00BBB344 /* AsteroidInfoCell.xib in Resources */,
 				FADF0374280FEBD500BBB344 /* LaunchScreen.storyboard in Resources */,
 				FADF0371280FEBD500BBB344 /* Assets.xcassets in Resources */,
 				FADF036F280FEBD300BBB344 /* Main.storyboard in Resources */,
@@ -138,9 +170,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FADF036C280FEBD300BBB344 /* ViewController.swift in Sources */,
+				FADF0389280FFAFF00BBB344 /* AsteroidInfoCell.swift in Sources */,
 				FADF0368280FEBD300BBB344 /* AppDelegate.swift in Sources */,
+				FADF03922810096E00BBB344 /* AsteroidViewController.swift in Sources */,
+				FADF038E281004A700BBB344 /* AsteriodInfoViewController.swift in Sources */,
 				FADF036A280FEBD300BBB344 /* SceneDelegate.swift in Sources */,
+				FADF0382280FFA8600BBB344 /* SettingsViewController.swift in Sources */,
+				FADF0380280FFA6900BBB344 /* DestroyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +186,7 @@
 		FADF036D280FEBD300BBB344 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FADF036E280FEBD300BBB344 /* Base */,
+				FADF0396281011C300BBB344 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -295,6 +331,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -306,7 +343,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -323,6 +360,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,7 +372,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
