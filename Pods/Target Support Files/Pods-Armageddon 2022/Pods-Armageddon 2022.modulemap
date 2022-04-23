@@ -1,0 +1,6 @@
+framework module Pods_Armageddon_2022 {
+  umbrella header "Pods-Armageddon 2022-umbrella.h"
+
+  export *
+  module * { export * }
+}
