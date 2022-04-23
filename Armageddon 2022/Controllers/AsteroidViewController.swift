@@ -10,81 +10,89 @@ import UIKit
 private let reuseIdentifier = "myCell"
 
 class AsteroidViewController: UICollectionViewController {
+    var dataResponse: Asteroid? = nil
+    let networkManager = NetworkManager()
+    var asteroidsArray: [NearEarthObject] = []
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Register cell classes
+        fetchData()
+       
+        
         collectionView.register(UINib(nibName: String(describing: "AsteroidInfoCell"), bundle: nil), forCellWithReuseIdentifier: "myCell")
-
-        // Do any additional setup after loading the view.
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
+    
     // MARK: UICollectionViewDataSource
-
-
+    
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 5
+        //        guard let asteroidsArray = asteroidsArray else { return 0 }
+        return asteroidsArray.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AsteroidInfoCell
-    
+        
+        
+        cell.isHazardLabel.text = asteroidsArray[indexPath.row].isPotentiallyHazardousAsteroid ? "Оценка: опасен" : "Оценка: не опасен"
+        cell.asteroidNameLabel.text = asteroidsArray[indexPath.row].name
+        
+        DispatchQueue.main.async { [self] in
+            if asteroidsArray[indexPath.row].isPotentiallyHazardousAsteroid == true {
+                cell.hazardColorLabel.backgroundColor = .systemRed
+            } else {
+                cell.hazardColorLabel.backgroundColor = .systemGreen
+                
+            }
+            if asteroidsArray[indexPath.row].estimatedDiameter.kilometers.estimatedDiameterMax > 0.7 {
+                cell.asteroidSizeLabel.image = UIImage(named: "asteroidHuge")
+            } else if asteroidsArray[indexPath.row].estimatedDiameter.kilometers.estimatedDiameterMax > 0.3 {
+                cell.asteroidSizeLabel.image = UIImage(named: "asteroidBig")
+                
+            } else {
+                cell.asteroidSizeLabel.image = UIImage(named: "asteroidSmall")
+                
+            }
+        }
+        
         cell.layer.cornerRadius = 30
         cell.backgroundColor = .white
         cell.clipsToBounds = true
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
     
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
+    // MARK: UICollectionViewDelegate
+    
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
-    }
-    */
     @IBAction func settingsButton(_ sender: UIBarButtonItem) {
-        performSegue(withIdentifier: "showSettingsVC", sender: .none)
-        
     }
     
+    func fetchData() {
+        networkManager.request(urlString: stringUrl) { [weak self] (result) in
+            DispatchQueue.main.async { [self] in
+                switch result {
+                case .success(let response):
+                    self?.dataResponse = response
+                    guard let someValue = self?.dataResponse?.nearEarthObjects else {return}
+                    for (_, values) in someValue {
+                        self?.asteroidsArray = values
+                    }
+                    self?.collectionView.reloadData()
+                case .failure(let error):
+                    print("Decode error: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
+   
 }
+
 
 

@@ -7,13 +7,29 @@
 
 import UIKit
 
-class AsteroidInfoCell: UICollectionViewCell {
 
+class AsteroidInfoCell: UICollectionViewCell {
+    
+    
+    @IBOutlet weak var hazardColorLabel: UIView!
+    
+    @IBOutlet weak var asteroidSizeLabel: UIImageView!
+    @IBOutlet weak var asteroidNameLabel: UILabel!
+    
+    @IBOutlet weak var asteriodDiameterLabel: UILabel!
+    @IBOutlet weak var asteriodCloseApproach: UILabel!
+    @IBOutlet weak var asteroisMissDistanceLabel: UILabel!
+    
+    @IBOutlet weak var isHazardLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
 
+    }
+    
+    
+    
 }
     
 
