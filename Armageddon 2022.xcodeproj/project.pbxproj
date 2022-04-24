@@ -10,6 +10,7 @@
 		A45806855BCA2C2597203B1F /* Pods_Armageddon_2022.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9055C3302E14AB2E4F702DC /* Pods_Armageddon_2022.framework */; };
 		FA64459B2813F2A90010CA33 /* Gradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA64459A2813F2A90010CA33 /* Gradients.swift */; };
 		FA924F7C2810294900FFC470 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA924F7E2810294900FFC470 /* Main.storyboard */; };
+		FAD46F4428156B2C00F6F588 /* DeletedAsteriodsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD46F4328156B2C00F6F588 /* DeletedAsteriodsCell.swift */; };
 		FADF0368280FEBD300BBB344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF0367280FEBD300BBB344 /* AppDelegate.swift */; };
 		FADF036A280FEBD300BBB344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF0369280FEBD300BBB344 /* SceneDelegate.swift */; };
 		FADF0371280FEBD500BBB344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FADF0370280FEBD500BBB344 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		B9055C3302E14AB2E4F702DC /* Pods_Armageddon_2022.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Armageddon_2022.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA64459A2813F2A90010CA33 /* Gradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradients.swift; sourceTree = "<group>"; };
 		FA924F7D2810294900FFC470 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FAD46F4328156B2C00F6F588 /* DeletedAsteriodsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletedAsteriodsCell.swift; sourceTree = "<group>"; };
 		FADF0364280FEBD300BBB344 /* Armageddon 2022.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Armageddon 2022.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FADF0367280FEBD300BBB344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FADF0369280FEBD300BBB344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,14 +98,15 @@
 		FADF0366280FEBD300BBB344 /* Armageddon 2022 */ = {
 			isa = PBXGroup;
 			children = (
-				FADF0367280FEBD300BBB344 /* AppDelegate.swift */,
-				FADF0369280FEBD300BBB344 /* SceneDelegate.swift */,
+				FA64459A2813F2A90010CA33 /* Gradients.swift */,
 				FADF038F2810059B00BBB344 /* Cells */,
 				FADF038B280FFB0800BBB344 /* Controllers */,
-				FADF0370280FEBD500BBB344 /* Assets.xcassets */,
-				FA924F7E2810294900FFC470 /* Main.storyboard */,
 				FAEB410F2811ACF6007FF0C4 /* Model */,
 				FAEB41102811AD08007FF0C4 /* NetworkManager */,
+				FADF0367280FEBD300BBB344 /* AppDelegate.swift */,
+				FADF0369280FEBD300BBB344 /* SceneDelegate.swift */,
+				FADF0370280FEBD500BBB344 /* Assets.xcassets */,
+				FA924F7E2810294900FFC470 /* Main.storyboard */,
 				FADF0372280FEBD500BBB344 /* LaunchScreen.storyboard */,
 				FADF0375280FEBD500BBB344 /* Info.plist */,
 			);
@@ -117,7 +120,6 @@
 				FADF037F280FFA6900BBB344 /* DestroyViewController.swift */,
 				FADF03912810096E00BBB344 /* AsteroidViewController.swift */,
 				FADF038D281004A700BBB344 /* AsteriodInfoViewController.swift */,
-				FA64459A2813F2A90010CA33 /* Gradients.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -127,6 +129,7 @@
 			children = (
 				FADF0388280FFAFF00BBB344 /* AsteroidInfoCell.xib */,
 				FADF0387280FFAFF00BBB344 /* AsteroidInfoCell.swift */,
+				FAD46F4328156B2C00F6F588 /* DeletedAsteriodsCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD46F4428156B2C00F6F588 /* DeletedAsteriodsCell.swift in Sources */,
 				FADF0389280FFAFF00BBB344 /* AsteroidInfoCell.swift in Sources */,
 				FA64459B2813F2A90010CA33 /* Gradients.swift in Sources */,
 				FADF0368280FEBD300BBB344 /* AppDelegate.swift in Sources */,

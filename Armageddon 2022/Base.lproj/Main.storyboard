@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wgh-UC-m6u">
-    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="FDA-mW-MV5" customClass="AsteriodInfoViewController" customModule="Armageddon_2022" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l2j-H6-jSP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="5wn-L1-RFT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -23,30 +23,30 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OrE-Sn-oxm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4444" y="634"/>
+            <point key="canvasLocation" x="4443.9252336448599" y="633.04535637149036"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="beR-pm-PSo">
             <objects>
                 <viewController id="TEy-bW-jgB" customClass="SettingsViewController" customModule="Armageddon_2022" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gMF-fN-Ugf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sip-gH-dfD">
-                                <rect key="frame" x="30" y="74" width="260" height="82"/>
+                                <rect key="frame" x="30" y="118" width="368" height="174"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5AU-fe-DrM">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="31"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="65.666666666666671"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ед. изм. расстояний" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYm-EP-LSF">
-                                                <rect key="frame" x="0.0" y="5.5" width="144" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="22.666666666666657" width="203.33333333333334" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tsU-wb-DVf">
-                                                <rect key="frame" x="152" y="0.0" width="108" height="32"/>
+                                                <rect key="frame" x="211.33333333333337" y="17.333333333333343" width="156.66666666666663" height="32"/>
                                                 <segments>
                                                     <segment title="First"/>
                                                     <segment title="Second"/>
@@ -55,16 +55,16 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P8C-bd-D8Z">
-                                        <rect key="frame" x="0.0" y="51" width="260" height="31"/>
+                                        <rect key="frame" x="0.0" y="85.666666666666657" width="368" height="88.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Показывать только опасные" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKY-he-SV0">
-                                                <rect key="frame" x="0.0" y="5.5" width="213.5" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="34" width="302.33333333333331" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oN9-Jm-9KX">
-                                                <rect key="frame" x="221.5" y="0.0" width="40.5" height="31"/>
+                                                <rect key="frame" x="310.33333333333331" y="28.666666666666686" width="59.666666666666686" height="31"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -89,7 +89,7 @@
                     <navigationItem key="navigationItem" id="5rd-q0-EfR">
                         <barButtonItem key="rightBarButtonItem" id="APS-r2-UdC">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="umJ-DE-840">
-                                <rect key="frame" x="212" y="9.5" width="92" height="31"/>
+                                <rect key="frame" x="84" y="6.6666666666666679" width="324" height="31.000000000000004"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Применить"/>
@@ -106,7 +106,7 @@
             <objects>
                 <collectionViewController id="kEs-TT-61x" customClass="AsteroidViewController" customModule="Armageddon_2022" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ys7-Mw-gwq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.91541108630952384" green="0.96724270152396896" blue="0.98148880523889248" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="25" minimumInteritemSpacing="10" id="QHN-GL-Yof">
@@ -117,14 +117,14 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="myCell" translatesAutoresizingMaskIntoConstraints="NO" id="Pqm-R7-dW5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
+                                <rect key="frame" x="54" y="0.0" width="320" height="308"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
                                 <connections>
-                                    <segue destination="FDA-mW-MV5" kind="show" id="Uc4-Mh-EjY"/>
+                                    <segue destination="FDA-mW-MV5" kind="showDetail" identifier="showDetail" id="Uc4-Mh-EjY"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -136,7 +136,7 @@
                     <navigationItem key="navigationItem" title="Астероиды 2022" id="aLs-Gh-P07">
                         <barButtonItem key="rightBarButtonItem" title="Item" id="Pj5-lg-BGs">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HGJ-CV-m5f">
-                                <rect key="frame" x="270" y="5" width="34" height="34"/>
+                                <rect key="frame" x="374" y="5" width="34" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="line.3.horizontal.decrease" catalog="system"/>
@@ -149,7 +149,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <size key="freeformSize" width="320" height="480"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xUB-RK-iwl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,37 +179,33 @@
             <objects>
                 <tableViewController id="cSs-cr-rEQ" customClass="DestroyViewController" customModule="Armageddon_2022" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="1rD-Yb-ZbH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="deletesAsteroids" id="Mh1-9v-PcJ">
-                                <rect key="frame" x="16" y="49.5" width="288" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="deletedAsteroids" id="Mh1-9v-PcJ" customClass="DeletedAsteriodsCell" customModule="Armageddon_2022" customModuleProvider="target">
+                                <rect key="frame" x="20" y="49" width="388" height="43"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mh1-9v-PcJ" id="91k-bl-H0g">
-                                    <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="brusWillHelp" id="rbt-zu-tcD">
-                                <rect key="frame" x="16" y="93.5" width="288" height="31"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rbt-zu-tcD" id="D3w-5w-aKd">
-                                    <rect key="frame" x="0.0" y="0.0" width="288" height="31"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="388" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PSv-Vl-kL7">
-                                            <rect key="frame" x="0.0" y="0.0" width="288" height="31"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="filled" title="Button" cornerStyle="capsule"/>
-                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1N-8K-5UO">
+                                            <rect key="frame" x="20" y="11" width="348" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="PSv-Vl-kL7" firstAttribute="leading" secondItem="D3w-5w-aKd" secondAttribute="leading" id="10z-HW-Y74"/>
-                                        <constraint firstAttribute="bottom" secondItem="PSv-Vl-kL7" secondAttribute="bottom" id="Bkb-ya-h1I"/>
-                                        <constraint firstAttribute="trailing" secondItem="PSv-Vl-kL7" secondAttribute="trailing" id="KQQ-2i-m4z"/>
-                                        <constraint firstItem="PSv-Vl-kL7" firstAttribute="top" secondItem="D3w-5w-aKd" secondAttribute="top" id="iK2-sZ-THs"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="S1N-8K-5UO" secondAttribute="trailing" id="58k-Y3-R7V"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="S1N-8K-5UO" secondAttribute="bottom" id="g8e-EX-Eay"/>
+                                        <constraint firstItem="S1N-8K-5UO" firstAttribute="leading" secondItem="91k-bl-H0g" secondAttribute="leadingMargin" id="hmF-bL-q0s"/>
+                                        <constraint firstItem="S1N-8K-5UO" firstAttribute="top" secondItem="91k-bl-H0g" secondAttribute="topMargin" id="z8M-dB-7uf"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="deletedAsteroidName" destination="S1N-8K-5UO" id="FGm-FO-aZ8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -230,7 +226,7 @@
                     <tabBarItem key="tabBarItem" title="Астероиды" image="globe" catalog="system" id="qwF-4f-5Uu"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="vIs-Sp-KjM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

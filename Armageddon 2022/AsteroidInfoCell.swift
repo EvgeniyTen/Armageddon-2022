@@ -7,9 +7,9 @@
 
 import UIKit
 
-
 class AsteroidInfoCell: UICollectionViewCell {
     
+    @IBOutlet weak var deleteButton: UIButton!
     
     @IBOutlet weak var hazardColorLabel: UIView!
     
