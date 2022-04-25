@@ -12,17 +12,15 @@ private let reuseIdentifier = "myCell"
 class AsteroidViewController: UICollectionViewController {
     
     let networkManager = NetworkManager()
-
+    
     var dataResponse: Asteroid? = nil
     var asteroidsArray: [NearEarthObject] = []
-    
-    var arrayDel = [String]()
-    
+    var missDistance: [MissDistance] = []
+    var closeApproach: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchData()
-       
         
         collectionView.register(UINib(nibName: String(describing: "AsteroidInfoCell"), bundle: nil), forCellWithReuseIdentifier: "myCell")
     }
@@ -57,7 +55,11 @@ class AsteroidViewController: UICollectionViewController {
                 // подтянуть градиент
                 cell.hazardColorLabel.backgroundColor = .systemGreen
             }
-        // MARK: Asteroids image size
+            
+            
+            
+            
+            // MARK: Asteroids image size
             if asteroidsArray[indexPath.row].estimatedDiameter.kilometers.estimatedDiameterMax > 0.7 {
                 cell.asteroidSizeLabel.image = UIImage(named: "asteroidHuge")
             } else if asteroidsArray[indexPath.row].estimatedDiameter.kilometers.estimatedDiameterMax > 0.3 {
@@ -66,6 +68,31 @@ class AsteroidViewController: UICollectionViewController {
                 cell.asteroidSizeLabel.image = UIImage(named: "asteroidSmall")
             }
         }
+        
+        // MARK: Asteroid close approach date
+        
+        let date = closeApproach[indexPath.item]
+        let convertedDate = date.toDateTime()
+        let dateFormated = formateDate(date: convertedDate)
+        cell.asteriodCloseApproach.text = "Подлет: \(dateFormated)"
+        
+        
+        
+        
+        // MARK: Asteroid miss distance
+        
+        let distanceObj = missDistance[indexPath.item]
+        let distanceByKM = distanceObj.kilometers
+        //let distanceByLunar = distanceObj.lunar
+        
+        guard let distanceDouble = Double(distanceByKM) else {return cell }
+        let distanceInt = Int(distanceDouble)
+        let distance = distanceInt.formattedWithSeparator
+        cell.asteroisMissDistanceLabel.text = "на расстояние \(distance) км"
+        
+
+        
+        
         cell.deleteButton.addTarget(self, action: #selector(deleteButton(_:)), for: .touchDown)
         cell.layer.cornerRadius = 30
         cell.backgroundColor = .white
@@ -75,21 +102,35 @@ class AsteroidViewController: UICollectionViewController {
     
     // MARK: UICollectionViewDelegate
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-                    let viewController = AsteriodInfoViewController()
-        self.navigationController?.showDetailViewController(viewController, sender: nil)
-    }
+    //??
     
     // MARK: Deleting cell method
     @objc func deleteButton(_ sender: UIButton!) {
         if let cell = sender.superview?.superview?.superview as? AsteroidInfoCell, let indexPath = collectionView.indexPath(for: cell) {
-        
-        asteroidsArray.remove(at: indexPath.row)
+            
+            asteroidsArray.remove(at: indexPath.row)
             //написать метод для сравнения массивов -текущего и с удаленным элементом
-        collectionView.deleteItems(at: [indexPath])
-        collectionView.reloadData()
+            collectionView.deleteItems(at: [indexPath])
+            collectionView.reloadData()
         }
     }
+    
+    
+    // MARK: Date formatter method
+    
+    func formateDate(date: NSDate) -> String {
+        let a = date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMMMd")
+        let c = dateFormatter.string(from: a as Date)
+        return c
+    }
+    
+  
+    
     // MARK: Settings methods
     @IBAction func settingsButton(_ sender: UIBarButtonItem) {
         
@@ -99,27 +140,73 @@ class AsteroidViewController: UICollectionViewController {
     // MARK: Fetching method
     func fetchData() {
         networkManager.asteriodRequest(urlString: stringUrl) { [weak self] (result) in
-            DispatchQueue.main.async { [self] in
-                switch result {
-                case .success(let response):
-                    self?.dataResponse = response
-                    guard let nearEarthObject = self?.dataResponse?.nearEarthObjects else {return}
-                    for (_, values) in nearEarthObject {
-                        self?.asteroidsArray.removeAll()
-                        self?.asteroidsArray = values
+            switch result {
+            case .success(let response):
+                self?.dataResponse = response
+                guard let nearEarthObject = self?.dataResponse?.nearEarthObjects else {return}
+                
+                            //Получаем массив астероидов
+                
+                for (_, values) in nearEarthObject {
+                    self?.asteroidsArray = values
+                    
+                            //Получаем объект "Возле земли" и доступ к свойствам
+                    
+                    for nearObject in self!.asteroidsArray {
+                        let dates = nearObject.closeApproachData
+                        for closeApproachDatum in dates {
+                            
+                            //Загоняем даты в массив
+                            
+                            let date = closeApproachDatum.closeApproachDate
+                            self?.closeApproach.append(date)
+                            //Загоняем дистанцию в массив
+                            
+                            let distance = closeApproachDatum.missDistance
+                            self?.missDistance.append(distance)
+                        }
                     }
+                    
                     self?.collectionView.reloadData()
-                case .failure(let error):
-                    print("Decode error: \(error.localizedDescription)")
                 }
+            case .failure(let error):
+                print("Decode error: \(error.localizedDescription)")
             }
         }
     }
-
 }
-   
+
+
+
 // MARK: Extensions
+
+extension Formatter {
+    static let withSeparator: NumberFormatter = {
+        let formatter = NumberFormatter()
+        formatter.groupingSeparator = " "
+        formatter.numberStyle = .decimal
+        return formatter
+    }()
+}
+
+extension BinaryInteger {
+    var formattedWithSeparator: String {
+        return Formatter.withSeparator.string(for: self) ?? ""
+    }
+}
+
 extension String {
+    
+    func toDateTime() -> NSDate
+    {
+        //Create Date Formatter
+        let dateFormatter = DateFormatter()
+        //Specify Format of String to Parse
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        //Parse into NSDate
+        let dateFromString : NSDate = dateFormatter.date(from: self)! as NSDate
+        return dateFromString
+    }
     
     func slice(from: String, to: String) -> String? {
         return (range(of: from)?.upperBound).flatMap { substringFrom in

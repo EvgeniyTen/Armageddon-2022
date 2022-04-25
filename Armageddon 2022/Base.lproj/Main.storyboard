@@ -9,22 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Asteriod Info View Controller-->
-        <scene sceneID="OBa-RO-RvW">
-            <objects>
-                <viewController id="FDA-mW-MV5" customClass="AsteriodInfoViewController" customModule="Armageddon_2022" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="l2j-H6-jSP">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="5wn-L1-RFT"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="JhN-fe-WfE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="OrE-Sn-oxm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4443.9252336448599" y="633.04535637149036"/>
-        </scene>
         <!--Settings View Controller-->
         <scene sceneID="beR-pm-PSo">
             <objects>
@@ -33,38 +17,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sip-gH-dfD">
-                                <rect key="frame" x="30" y="118" width="368" height="174"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sip-gH-dfD">
+                                <rect key="frame" x="30" y="94" width="368" height="148"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5AU-fe-DrM">
-                                        <rect key="frame" x="0.0" y="0.0" width="368" height="65.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ед. изм. расстояний" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYm-EP-LSF">
-                                                <rect key="frame" x="0.0" y="22.666666666666657" width="203.33333333333334" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="25" width="220" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tsU-wb-DVf">
-                                                <rect key="frame" x="211.33333333333337" y="17.333333333333343" width="156.66666666666663" height="32"/>
+                                                <rect key="frame" x="228" y="19.666666666666671" width="140" height="32"/>
                                                 <segments>
-                                                    <segment title="First"/>
-                                                    <segment title="Second"/>
+                                                    <segment title="км"/>
+                                                    <segment title="л.орб"/>
                                                 </segments>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P8C-bd-D8Z">
-                                        <rect key="frame" x="0.0" y="85.666666666666657" width="368" height="88.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="78" width="368" height="70"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Показывать только опасные" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKY-he-SV0">
-                                                <rect key="frame" x="0.0" y="34" width="302.33333333333331" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="25" width="302.33333333333331" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oN9-Jm-9KX">
-                                                <rect key="frame" x="310.33333333333331" y="28.666666666666686" width="59.666666666666686" height="31"/>
+                                                <rect key="frame" x="310.33333333333331" y="19.666666666666657" width="59.666666666666686" height="31"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -76,26 +60,39 @@
                                     <constraint firstItem="5AU-fe-DrM" firstAttribute="leading" secondItem="sip-gH-dfD" secondAttribute="leading" id="h2v-dB-4UL"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WN7-6q-xLZ">
+                                <rect key="frame" x="20" y="44" width="58" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Назад" image="chevron.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="backButton:" destination="TEy-bW-jgB" eventType="touchUpInside" id="rTV-4t-dh9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XrU-UW-W0F">
+                                <rect key="frame" x="327" y="44" width="81" height="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Применить"/>
+                                <connections>
+                                    <action selector="setSettings:" destination="TEy-bW-jgB" eventType="touchUpInside" id="c5Q-nJ-E8J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KCx-rB-e0b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sip-gH-dfD" firstAttribute="top" secondItem="KCx-rB-e0b" secondAttribute="top" constant="30" id="UnZ-gO-aqI"/>
+                            <constraint firstItem="XrU-UW-W0F" firstAttribute="leading" relation="lessThanOrEqual" secondItem="WN7-6q-xLZ" secondAttribute="trailing" constant="249" id="ByG-7Y-xA8"/>
+                            <constraint firstItem="XrU-UW-W0F" firstAttribute="top" secondItem="KCx-rB-e0b" secondAttribute="top" id="D1x-9E-4Ez"/>
+                            <constraint firstItem="WN7-6q-xLZ" firstAttribute="top" secondItem="KCx-rB-e0b" secondAttribute="top" id="Fpn-CF-UTh"/>
+                            <constraint firstItem="sip-gH-dfD" firstAttribute="top" secondItem="XrU-UW-W0F" secondAttribute="bottom" constant="20" id="NGT-tM-zQI"/>
+                            <constraint firstItem="sip-gH-dfD" firstAttribute="top" secondItem="WN7-6q-xLZ" secondAttribute="bottom" constant="20" id="Ocs-vm-70g"/>
+                            <constraint firstItem="KCx-rB-e0b" firstAttribute="trailing" secondItem="XrU-UW-W0F" secondAttribute="trailing" constant="20" id="Qb3-Ep-h1F"/>
+                            <constraint firstItem="sip-gH-dfD" firstAttribute="top" secondItem="KCx-rB-e0b" secondAttribute="top" constant="50" id="UnZ-gO-aqI"/>
                             <constraint firstItem="KCx-rB-e0b" firstAttribute="trailing" secondItem="sip-gH-dfD" secondAttribute="trailing" constant="30" id="htl-HE-cuu"/>
                             <constraint firstItem="sip-gH-dfD" firstAttribute="leading" secondItem="KCx-rB-e0b" secondAttribute="leading" constant="30" id="igp-pT-Yhl"/>
-                            <constraint firstItem="KCx-rB-e0b" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="sip-gH-dfD" secondAttribute="bottom" constant="600" id="xJX-yM-nbN"/>
+                            <constraint firstItem="WN7-6q-xLZ" firstAttribute="leading" secondItem="KCx-rB-e0b" secondAttribute="leading" constant="20" id="ssb-wC-eEc"/>
+                            <constraint firstItem="KCx-rB-e0b" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="sip-gH-dfD" secondAttribute="bottom" constant="650" id="xJX-yM-nbN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5rd-q0-EfR">
-                        <barButtonItem key="rightBarButtonItem" id="APS-r2-UdC">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="umJ-DE-840">
-                                <rect key="frame" x="84" y="6.6666666666666679" width="324" height="31.000000000000004"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Применить"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKD-bu-jaJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,9 +120,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
-                                <connections>
-                                    <segue destination="FDA-mW-MV5" kind="showDetail" identifier="showDetail" id="Uc4-Mh-EjY"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -141,7 +135,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="line.3.horizontal.decrease" catalog="system"/>
                                 <connections>
-                                    <segue destination="TEy-bW-jgB" kind="show" id="9Jv-11-oak"/>
+                                    <segue destination="TEy-bW-jgB" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="9Jv-11-oak"/>
                                 </connections>
                             </button>
                             <connections>
@@ -240,6 +234,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="line.3.horizontal.decrease" catalog="system" width="128" height="73"/>
         <image name="trash" catalog="system" width="121" height="128"/>

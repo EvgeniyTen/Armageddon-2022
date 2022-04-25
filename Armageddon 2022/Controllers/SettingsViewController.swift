@@ -13,4 +13,9 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    @IBAction func setSettings(_ sender: UIButton) {
+    }
+    @IBAction func backButton(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
 }

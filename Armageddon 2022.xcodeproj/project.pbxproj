@@ -19,7 +19,6 @@
 		FADF0382280FFA8600BBB344 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF0381280FFA8600BBB344 /* SettingsViewController.swift */; };
 		FADF0389280FFAFF00BBB344 /* AsteroidInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF0387280FFAFF00BBB344 /* AsteroidInfoCell.swift */; };
 		FADF038A280FFAFF00BBB344 /* AsteroidInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADF0388280FFAFF00BBB344 /* AsteroidInfoCell.xib */; };
-		FADF038E281004A700BBB344 /* AsteriodInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF038D281004A700BBB344 /* AsteriodInfoViewController.swift */; };
 		FADF03922810096E00BBB344 /* AsteroidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADF03912810096E00BBB344 /* AsteroidViewController.swift */; };
 		FAEB410528119F37007FF0C4 /* AsteroidModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB410428119F37007FF0C4 /* AsteroidModel.swift */; };
 		FAEB41162811AE08007FF0C4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB41152811AE08007FF0C4 /* NetworkManager.swift */; };
@@ -42,7 +41,6 @@
 		FADF0381280FFA8600BBB344 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FADF0387280FFAFF00BBB344 /* AsteroidInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidInfoCell.swift; sourceTree = "<group>"; };
 		FADF0388280FFAFF00BBB344 /* AsteroidInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AsteroidInfoCell.xib; sourceTree = "<group>"; };
-		FADF038D281004A700BBB344 /* AsteriodInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteriodInfoViewController.swift; sourceTree = "<group>"; };
 		FADF03912810096E00BBB344 /* AsteroidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidViewController.swift; sourceTree = "<group>"; };
 		FAEB410428119F37007FF0C4 /* AsteroidModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsteroidModel.swift; sourceTree = "<group>"; };
 		FAEB41152811AE08007FF0C4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				FADF0381280FFA8600BBB344 /* SettingsViewController.swift */,
 				FADF037F280FFA6900BBB344 /* DestroyViewController.swift */,
 				FADF03912810096E00BBB344 /* AsteroidViewController.swift */,
-				FADF038D281004A700BBB344 /* AsteriodInfoViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -273,7 +270,6 @@
 				FAEB41162811AE08007FF0C4 /* NetworkManager.swift in Sources */,
 				FAEB410528119F37007FF0C4 /* AsteroidModel.swift in Sources */,
 				FADF03922810096E00BBB344 /* AsteroidViewController.swift in Sources */,
-				FADF038E281004A700BBB344 /* AsteriodInfoViewController.swift in Sources */,
 				FADF036A280FEBD300BBB344 /* SceneDelegate.swift in Sources */,
 				FADF0382280FFA8600BBB344 /* SettingsViewController.swift in Sources */,
 				FADF0380280FFA6900BBB344 /* DestroyViewController.swift in Sources */,

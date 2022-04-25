@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,6 +18,32 @@
                 <rect key="frame" x="0.0" y="0.0" width="310" height="308"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="x4s-zx-IiH">
+                        <rect key="frame" x="16" y="153" width="278" height="100"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Диаметр: 500м" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MPQ-X5-1VD">
+                                <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="33.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подлетает 2 ноября" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xtB-SB-1UA">
+                                <rect key="frame" x="0.0" y="33.333333333333329" width="153.33333333333334" height="33.333333333333329"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="на расстояние 9233 000 564 км" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ab3-Kn-beL">
+                                <rect key="frame" x="0.0" y="66.666666666666671" width="235.33333333333334" height="33.333333333333329"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="6" id="OHe-hx-gm8">
                         <rect key="frame" x="16" y="255" width="278.00000000000006" height="33"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -77,32 +102,14 @@
                             <constraint firstAttribute="trailing" secondItem="ngk-Ue-xeb" secondAttribute="trailing" constant="77" id="v7L-tc-drq"/>
                         </constraints>
                     </view>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacingType="standard" id="BLi-RC-N6H">
-                        <rect key="frame" x="16" y="165" width="208.66666666666666" height="72"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Диаметр: 500м" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPQ-X5-1VD">
-                                <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="18.666666666666668"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подлетает 2 ноября" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xtB-SB-1UA">
-                                <rect key="frame" x="0.0" y="26.666666666666664" width="153.33333333333334" height="18.666666666666664"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="на расстояние 9 000 564 км" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ab3-Kn-beL">
-                                <rect key="frame" x="0.0" y="53.333333333333336" width="208.66666666666666" height="18.666666666666664"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </stackView>
                 </subviews>
                 <viewLayoutGuide key="safeArea" id="xR1-uF-4m5"/>
+                <constraints>
+                    <constraint firstItem="x4s-zx-IiH" firstAttribute="top" secondItem="67V-oQ-huQ" secondAttribute="bottom" constant="8" symbolic="YES" id="3Ua-KG-rre"/>
+                    <constraint firstItem="xR1-uF-4m5" firstAttribute="trailing" secondItem="x4s-zx-IiH" secondAttribute="trailing" constant="16" id="Ss8-X1-ZXa"/>
+                    <constraint firstItem="OHe-hx-gm8" firstAttribute="top" secondItem="x4s-zx-IiH" secondAttribute="bottom" constant="2" id="Vxs-SO-s4L"/>
+                    <constraint firstItem="x4s-zx-IiH" firstAttribute="leading" secondItem="xR1-uF-4m5" secondAttribute="leading" constant="16" id="rQA-x6-fj3"/>
+                </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="238" height="270"/>
             <connections>
