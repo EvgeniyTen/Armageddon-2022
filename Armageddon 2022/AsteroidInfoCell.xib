@@ -3,8 +3,6 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -72,8 +70,8 @@
                             </button>
                         </subviews>
                     </stackView>
-                    <view contentMode="scaleToFill" id="67V-oQ-huQ">
-                        <rect key="frame" x="-1" y="0.0" width="310" height="145"/>
+                    <view contentMode="scaleAspectFill" id="67V-oQ-huQ">
+                        <rect key="frame" x="0.0" y="0.0" width="310" height="145"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022 QQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngk-Ue-xeb">
@@ -91,7 +89,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
                             <constraint firstItem="Glq-t6-gCV" firstAttribute="leading" secondItem="67V-oQ-huQ" secondAttribute="leadingMargin" constant="19" id="0g4-LG-HwP"/>
                             <constraint firstAttribute="top" secondItem="Glq-t6-gCV" secondAttribute="top" id="3sA-Yg-ErK"/>
@@ -103,12 +100,11 @@
                         </constraints>
                     </view>
                 </subviews>
-                <viewLayoutGuide key="safeArea" id="xR1-uF-4m5"/>
                 <constraints>
                     <constraint firstItem="x4s-zx-IiH" firstAttribute="top" secondItem="67V-oQ-huQ" secondAttribute="bottom" constant="8" symbolic="YES" id="3Ua-KG-rre"/>
-                    <constraint firstItem="xR1-uF-4m5" firstAttribute="trailing" secondItem="x4s-zx-IiH" secondAttribute="trailing" constant="16" id="Ss8-X1-ZXa"/>
+                    <constraint firstAttribute="trailing" secondItem="x4s-zx-IiH" secondAttribute="trailing" constant="16" id="Ss8-X1-ZXa"/>
                     <constraint firstItem="OHe-hx-gm8" firstAttribute="top" secondItem="x4s-zx-IiH" secondAttribute="bottom" constant="2" id="Vxs-SO-s4L"/>
-                    <constraint firstItem="x4s-zx-IiH" firstAttribute="leading" secondItem="xR1-uF-4m5" secondAttribute="leading" constant="16" id="rQA-x6-fj3"/>
+                    <constraint firstItem="x4s-zx-IiH" firstAttribute="leading" secondItem="5ua-hZ-5jW" secondAttribute="leading" constant="16" id="rQA-x6-fj3"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="238" height="270"/>
@@ -128,8 +124,5 @@
     <resources>
         <image name="asteroidBig" width="108" height="84"/>
         <image name="dino" width="70" height="60"/>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>

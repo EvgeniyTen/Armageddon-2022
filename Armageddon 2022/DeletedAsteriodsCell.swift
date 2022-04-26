@@ -11,6 +11,7 @@ class DeletedAsteriodsCell: UITableViewCell {
 
     @IBOutlet weak var deletedAsteroidName: UILabel!
 
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -10,19 +10,23 @@ import UIKit
 private let reuseIdentifier = "myCell"
 
 class AsteroidViewController: UICollectionViewController {
-    
     let networkManager = NetworkManager()
     
     var dataResponse: Asteroid? = nil
     var asteroidsArray: [NearEarthObject] = []
+    var deletedElements: [NearEarthObject] = []
     var missDistance: [MissDistance] = []
     var closeApproach: [String] = []
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchData()
-        
-        collectionView.register(UINib(nibName: String(describing: "AsteroidInfoCell"), bundle: nil), forCellWithReuseIdentifier: "myCell")
+        collectionView.register(UINib(nibName: String(describing: "AsteroidInfoCell"), bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
     }
     
     
@@ -45,33 +49,29 @@ class AsteroidViewController: UICollectionViewController {
         // MARK: Asteroids hazard indicators
         let diameter = asteroidsArray[indexPath.row].estimatedDiameter.meters.estimatedDiameterMax
         cell.asteriodDiameterLabel.text = "Диаметр: \(Int(diameter)) м"
-        cell.isHazardLabel.text = asteroidsArray[indexPath.row].isPotentiallyHazardousAsteroid ? "опасен" : "не опасен"
-        cell.isHazardLabel.textColor = asteroidsArray[indexPath.row].isPotentiallyHazardousAsteroid ? .systemRed : .black
-        DispatchQueue.main.async { [self] in
-            if asteroidsArray[indexPath.row].isPotentiallyHazardousAsteroid == true {
-                // подтянуть градиент
-                cell.hazardColorLabel.backgroundColor = .systemRed
-            } else {
-                // подтянуть градиент
-                cell.hazardColorLabel.backgroundColor = .systemGreen
-            }
-            
-            
-            
-            
-            // MARK: Asteroids image size
-            if asteroidsArray[indexPath.row].estimatedDiameter.kilometers.estimatedDiameterMax > 0.7 {
-                cell.asteroidSizeLabel.image = UIImage(named: "asteroidHuge")
-            } else if asteroidsArray[indexPath.row].estimatedDiameter.kilometers.estimatedDiameterMax > 0.3 {
-                cell.asteroidSizeLabel.image = UIImage(named: "asteroidBig")
-            } else {
-                cell.asteroidSizeLabel.image = UIImage(named: "asteroidSmall")
-            }
+        let hazard = asteroidsArray[indexPath.row].isPotentiallyHazardousAsteroid
+        
+        // MARK: Gradients
+        cell.setGradientColor(hazard, cell.hazardColorLabel)
+        cell.isHazardLabel.textColor = hazard ? .systemRed : .systemGreen
+        cell.isHazardLabel.text = hazard ? "опасен" : "не опасен"
+        
+        
+        // MARK: Asteroids image size
+        if asteroidsArray[indexPath.row].estimatedDiameter.kilometers.estimatedDiameterMax > 0.7 {
+            cell.asteroidSizeLabel.image = UIImage(named: "asteroidHuge")
+        } else if asteroidsArray[indexPath.row].estimatedDiameter.kilometers.estimatedDiameterMax > 0.3 {
+            cell.asteroidSizeLabel.image = UIImage(named: "asteroidBig")
+        } else {
+            cell.asteroidSizeLabel.image = UIImage(named: "asteroidSmall")
         }
+        
+        
         
         // MARK: Asteroid close approach date
         
-        let date = closeApproach[indexPath.item]
+        let date = closeApproach[indexPath.row]
+        print("info 1: \(asteroidsArray[indexPath.row].isPotentiallyHazardousAsteroid)")
         let convertedDate = date.toDateTime()
         let dateFormated = formateDate(date: convertedDate)
         cell.asteriodCloseApproach.text = "Подлет: \(dateFormated)"
@@ -90,32 +90,34 @@ class AsteroidViewController: UICollectionViewController {
         let distance = distanceInt.formattedWithSeparator
         cell.asteroisMissDistanceLabel.text = "на расстояние \(distance) км"
         
-
+        
         
         
         cell.deleteButton.addTarget(self, action: #selector(deleteButton(_:)), for: .touchDown)
         cell.layer.cornerRadius = 30
-        cell.backgroundColor = .white
+        cell.backgroundColor = UIColor(red: 249 / 255, green: 249 / 255, blue: 249 / 255, alpha: 1.0)
         cell.clipsToBounds = true
+        // требуется создание нижнего слоя для ячейки, что бы создать тень
+        //        cell.layer.shadowRadius = 4.0
+        //        cell.layer.shadowOpacity = 0.5
+        //        cell.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
         return cell
     }
     
+    
     // MARK: UICollectionViewDelegate
     
-    //??
+ 
     
     // MARK: Deleting cell method
     @objc func deleteButton(_ sender: UIButton!) {
         if let cell = sender.superview?.superview?.superview as? AsteroidInfoCell, let indexPath = collectionView.indexPath(for: cell) {
-            
-            asteroidsArray.remove(at: indexPath.row)
-            //написать метод для сравнения массивов -текущего и с удаленным элементом
+            let removedValue = asteroidsArray.remove(at: indexPath.row)
+            deletedElements.append(removedValue)
             collectionView.deleteItems(at: [indexPath])
             collectionView.reloadData()
         }
     }
-    
-    
     // MARK: Date formatter method
     
     func formateDate(date: NSDate) -> String {
@@ -129,12 +131,14 @@ class AsteroidViewController: UICollectionViewController {
         return c
     }
     
-  
+    
     
     // MARK: Settings methods
     @IBAction func settingsButton(_ sender: UIBarButtonItem) {
         
     }
+    
+    
     
     
     // MARK: Fetching method
@@ -145,12 +149,12 @@ class AsteroidViewController: UICollectionViewController {
                 self?.dataResponse = response
                 guard let nearEarthObject = self?.dataResponse?.nearEarthObjects else {return}
                 
-                            //Получаем массив астероидов
+                //Получаем массив астероидов
                 
                 for (_, values) in nearEarthObject {
                     self?.asteroidsArray = values
                     
-                            //Получаем объект "Возле земли" и доступ к свойствам
+                    //Получаем объект "Возле земли" и доступ к свойствам
                     
                     for nearObject in self!.asteroidsArray {
                         let dates = nearObject.closeApproachData
@@ -166,19 +170,19 @@ class AsteroidViewController: UICollectionViewController {
                             self?.missDistance.append(distance)
                         }
                     }
-                    
-                    self?.collectionView.reloadData()
                 }
             case .failure(let error):
                 print("Decode error: \(error.localizedDescription)")
             }
+            self?.collectionView.reloadData()
         }
     }
 }
 
 
-
 // MARK: Extensions
+
+
 
 extension Formatter {
     static let withSeparator: NumberFormatter = {
