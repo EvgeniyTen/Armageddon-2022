@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,96 +17,102 @@
                 <rect key="frame" x="0.0" y="0.0" width="310" height="308"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="x4s-zx-IiH">
-                        <rect key="frame" x="16" y="153" width="278" height="100"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Диаметр: 500м" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MPQ-X5-1VD">
-                                <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="33.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подлетает 2 ноября" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xtB-SB-1UA">
-                                <rect key="frame" x="0.0" y="33.333333333333329" width="153.33333333333334" height="33.333333333333329"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="на расстояние 9233 000 564 км" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ab3-Kn-beL">
-                                <rect key="frame" x="0.0" y="66.666666666666671" width="235.33333333333334" height="33.333333333333329"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                    </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacing="6" id="OHe-hx-gm8">
-                        <rect key="frame" x="16" y="255" width="278.00000000000006" height="33"/>
+                    <view contentMode="scaleToFill" id="JnX-vt-DL5">
+                        <rect key="frame" x="2" y="2" width="306" height="304"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="8qA-h6-prt">
-                                <rect key="frame" x="0.0" y="7.9999999999999982" width="154.33333333333334" height="17.333333333333329"/>
+                            <view contentMode="scaleAspectFill" id="67V-oQ-huQ">
+                                <rect key="frame" x="0.0" y="0.0" width="306" height="145"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Оценка: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYE-4a-UJJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="62" height="17.333333333333332"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="tXv-9m-8Bb">
+                                        <rect key="frame" x="0.0" y="0.0" width="306" height="145"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2022 QQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngk-Ue-xeb">
+                                        <rect key="frame" x="16" y="111" width="217" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="не опасен" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2s-mG-drz">
-                                        <rect key="frame" x="68" y="0.0" width="86.333333333333314" height="17.333333333333332"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                    <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" insetsLayoutMarginsFromSafeArea="NO" image="asteroidBig" id="Glq-t6-gCV">
+                                        <rect key="frame" x="27" y="0.0" width="122" height="84"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dino" translatesAutoresizingMaskIntoConstraints="NO" id="ns9-CF-Tid">
+                                        <rect key="frame" x="224" y="115" width="70" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="x4s-zx-IiH">
+                                <rect key="frame" x="16" y="155" width="274" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Диаметр: 500м" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MPQ-X5-1VD">
+                                        <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="33.333333333333336"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подлетает 2 ноября" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xtB-SB-1UA">
+                                        <rect key="frame" x="0.0" y="33.333333333333329" width="153.33333333333334" height="33.333333333333329"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="на расстояние 9233 000 564 км" textAlignment="natural" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ab3-Kn-beL">
+                                        <rect key="frame" x="0.0" y="66.666666666666671" width="235.33333333333334" height="33.333333333333329"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fht-ud-n7X">
-                                <rect key="frame" x="160.33333333333334" y="1" width="117.66666666666666" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Уничтожить" cornerStyle="capsule"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="8qA-h6-prt">
+                                <rect key="frame" x="16" y="263" width="274" height="31"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Оценка: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lYE-4a-UJJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="31"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="не опасен" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I2s-mG-drz">
+                                        <rect key="frame" x="68" y="0.0" width="70.333333333333314" height="31"/>
+                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fht-ud-n7X">
+                                        <rect key="frame" x="144.33333333333337" y="0.0" width="129.66666666666663" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Уничтожить" cornerStyle="capsule"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                    </stackView>
-                    <view contentMode="scaleAspectFill" id="67V-oQ-huQ">
-                        <rect key="frame" x="0.0" y="0.0" width="310" height="145"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022 QQ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngk-Ue-xeb">
-                                <rect key="frame" x="16" y="111" width="217" height="24"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalCompressionResistancePriority="751" insetsLayoutMarginsFromSafeArea="NO" image="asteroidBig" id="Glq-t6-gCV">
-                                <rect key="frame" x="27" y="0.0" width="126" height="84"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="dino" translatesAutoresizingMaskIntoConstraints="NO" id="ns9-CF-Tid">
-                                <rect key="frame" x="224" y="115" width="70" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Glq-t6-gCV" firstAttribute="leading" secondItem="67V-oQ-huQ" secondAttribute="leadingMargin" constant="19" id="0g4-LG-HwP"/>
-                            <constraint firstAttribute="top" secondItem="Glq-t6-gCV" secondAttribute="top" id="3sA-Yg-ErK"/>
-                            <constraint firstItem="ngk-Ue-xeb" firstAttribute="top" secondItem="Glq-t6-gCV" secondAttribute="bottom" constant="27" id="bWK-Q1-MNN"/>
-                            <constraint firstItem="ngk-Ue-xeb" firstAttribute="leading" secondItem="67V-oQ-huQ" secondAttribute="leading" constant="16" id="c3U-YS-Z9n"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Glq-t6-gCV" secondAttribute="trailing" constant="149" id="e4z-WR-vSm"/>
-                            <constraint firstAttribute="bottom" secondItem="ngk-Ue-xeb" secondAttribute="bottom" constant="10" id="neu-jw-z5M"/>
-                            <constraint firstAttribute="trailing" secondItem="ngk-Ue-xeb" secondAttribute="trailing" constant="77" id="v7L-tc-drq"/>
+                            <constraint firstAttribute="trailing" secondItem="x4s-zx-IiH" secondAttribute="trailing" constant="16" id="DYT-hI-TiO"/>
+                            <constraint firstItem="tXv-9m-8Bb" firstAttribute="top" secondItem="JnX-vt-DL5" secondAttribute="top" id="NCS-TN-e19"/>
+                            <constraint firstItem="8qA-h6-prt" firstAttribute="top" secondItem="x4s-zx-IiH" secondAttribute="bottom" constant="8" symbolic="YES" id="Rch-Jf-GIJ"/>
+                            <constraint firstItem="tXv-9m-8Bb" firstAttribute="leading" secondItem="67V-oQ-huQ" secondAttribute="leading" id="V1O-Cx-VUD"/>
+                            <constraint firstItem="x4s-zx-IiH" firstAttribute="leading" secondItem="JnX-vt-DL5" secondAttribute="leading" constant="16" id="dN1-oK-taD"/>
+                            <constraint firstItem="67V-oQ-huQ" firstAttribute="trailing" secondItem="tXv-9m-8Bb" secondAttribute="trailing" id="hRC-hZ-Ov5"/>
+                            <constraint firstAttribute="trailing" secondItem="8qA-h6-prt" secondAttribute="trailing" constant="16" id="l5j-LL-rxo"/>
+                            <constraint firstItem="x4s-zx-IiH" firstAttribute="top" secondItem="67V-oQ-huQ" secondAttribute="bottom" constant="10" id="mTE-AW-c6p"/>
+                            <constraint firstItem="8qA-h6-prt" firstAttribute="leading" secondItem="JnX-vt-DL5" secondAttribute="leading" constant="16" id="rKx-Cc-q8E"/>
+                            <constraint firstAttribute="bottom" secondItem="tXv-9m-8Bb" secondAttribute="bottom" constant="159" id="rtf-cJ-MQj"/>
+                            <constraint firstAttribute="bottom" secondItem="8qA-h6-prt" secondAttribute="bottom" constant="10" id="wT9-yS-B7h"/>
+                            <constraint firstItem="tXv-9m-8Bb" firstAttribute="width" relation="greaterThanOrEqual" secondItem="JnX-vt-DL5" secondAttribute="width" id="xM3-eF-gER"/>
                         </constraints>
                     </view>
                 </subviews>
-                <constraints>
-                    <constraint firstItem="x4s-zx-IiH" firstAttribute="top" secondItem="67V-oQ-huQ" secondAttribute="bottom" constant="8" symbolic="YES" id="3Ua-KG-rre"/>
-                    <constraint firstAttribute="trailing" secondItem="x4s-zx-IiH" secondAttribute="trailing" constant="16" id="Ss8-X1-ZXa"/>
-                    <constraint firstItem="OHe-hx-gm8" firstAttribute="top" secondItem="x4s-zx-IiH" secondAttribute="bottom" constant="2" id="Vxs-SO-s4L"/>
-                    <constraint firstItem="x4s-zx-IiH" firstAttribute="leading" secondItem="5ua-hZ-5jW" secondAttribute="leading" constant="16" id="rQA-x6-fj3"/>
-                </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="238" height="270"/>
             <connections>
@@ -114,8 +121,9 @@
                 <outlet property="asteroidNameLabel" destination="ngk-Ue-xeb" id="Bcf-Ln-zBa"/>
                 <outlet property="asteroidSizeLabel" destination="Glq-t6-gCV" id="tkR-Wv-YBR"/>
                 <outlet property="asteroisMissDistanceLabel" destination="Ab3-Kn-beL" id="Fyk-rM-6JK"/>
+                <outlet property="backgroundLayer" destination="JnX-vt-DL5" id="Val-xl-Ywj"/>
                 <outlet property="deleteButton" destination="fht-ud-n7X" id="NZP-o9-zrO"/>
-                <outlet property="hazardColorLabel" destination="67V-oQ-huQ" id="aFd-F0-nY9"/>
+                <outlet property="hazardColorLabel" destination="tXv-9m-8Bb" id="BPg-Vu-UJ9"/>
                 <outlet property="isHazardLabel" destination="I2s-mG-drz" id="17J-XX-bhS"/>
             </connections>
             <point key="canvasLocation" x="-150.76923076923077" y="128.67298578199052"/>
@@ -124,5 +132,8 @@
     <resources>
         <image name="asteroidBig" width="108" height="84"/>
         <image name="dino" width="70" height="60"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

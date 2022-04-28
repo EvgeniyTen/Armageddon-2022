@@ -9,56 +9,71 @@ import UIKit
 
 private let reuseIdentifier = "myCell"
 
+
+
 class AsteroidViewController: UICollectionViewController {
-    let networkManager = NetworkManager()
     
-    var dataResponse: Asteroid? = nil
-    var asteroidsArray: [NearEarthObject] = []
-    var deletedElements: [NearEarthObject] = []
-    var missDistance: [MissDistance] = []
-    var closeApproach: [String] = []
+    private let networkManager = NetworkManager()
+    
+    private var dataResponse: Asteroid? = nil
+    private var asteroidsArray: [NearEarthObject] = []
+    private var filteredArray: [NearEarthObject]?
+    
+    private var missDistance: [MissDistance] = []
+    private var closeApproach: [String] = []
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        fetchData()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.register(UINib(nibName: String(describing: "AsteroidInfoCell"), bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
+        fetchData()
+        
     }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        collectionView.reloadData()
+        
+    }
     
     // MARK: UICollectionViewDataSource
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return asteroidsArray.count
+        filteredArray = asteroidsArray
+        guard var data = filteredArray else {return 0}
+        if UserDefaults.standard.bool(forKey: "hazard") {
+            data = asteroidsArray.filter{$0.isPotentiallyHazardousAsteroid}
+        }
+        return data.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! AsteroidInfoCell
+        guard var data = filteredArray else {return cell}
+        if UserDefaults.standard.bool(forKey: "hazard") {
+            data = asteroidsArray.filter{$0.isPotentiallyHazardousAsteroid}
+        }
+        
+        
         
         
         // MARK: Asteroid name
-        let name = asteroidsArray[indexPath.row].name
+        let name = data[indexPath.row].name
         cell.asteroidNameLabel.text = name.slice(from: "(", to: ")")
         
         // MARK: Asteroids hazard indicators
-        let diameter = asteroidsArray[indexPath.row].estimatedDiameter.meters.estimatedDiameterMax
+        let diameter = data[indexPath.row].estimatedDiameter.meters.estimatedDiameterMax
+        let hazard = data[indexPath.row].isPotentiallyHazardousAsteroid
         cell.asteriodDiameterLabel.text = "Диаметр: \(Int(diameter)) м"
-        let hazard = asteroidsArray[indexPath.row].isPotentiallyHazardousAsteroid
-        
-        // MARK: Gradients
-        cell.setGradientColor(hazard, cell.hazardColorLabel)
+        cell.hazardColorLabel.image = hazard ? UIImage(named: "red") : UIImage(named: "green")
         cell.isHazardLabel.textColor = hazard ? .systemRed : .systemGreen
         cell.isHazardLabel.text = hazard ? "опасен" : "не опасен"
         
         
         // MARK: Asteroids image size
-        if asteroidsArray[indexPath.row].estimatedDiameter.kilometers.estimatedDiameterMax > 0.7 {
+        if data[indexPath.row].estimatedDiameter.kilometers.estimatedDiameterMax > 0.7 {
             cell.asteroidSizeLabel.image = UIImage(named: "asteroidHuge")
         } else if asteroidsArray[indexPath.row].estimatedDiameter.kilometers.estimatedDiameterMax > 0.3 {
             cell.asteroidSizeLabel.image = UIImage(named: "asteroidBig")
@@ -68,10 +83,10 @@ class AsteroidViewController: UICollectionViewController {
         
         
         
+        
         // MARK: Asteroid close approach date
         
         let date = closeApproach[indexPath.row]
-        print("info 1: \(asteroidsArray[indexPath.row].isPotentiallyHazardousAsteroid)")
         let convertedDate = date.toDateTime()
         let dateFormated = formateDate(date: convertedDate)
         cell.asteriodCloseApproach.text = "Подлет: \(dateFormated)"
@@ -83,44 +98,52 @@ class AsteroidViewController: UICollectionViewController {
         
         let distanceObj = missDistance[indexPath.item]
         let distanceByKM = distanceObj.kilometers
-        //let distanceByLunar = distanceObj.lunar
+        let distanceByLunar = distanceObj.lunar
         
-        guard let distanceDouble = Double(distanceByKM) else {return cell }
-        let distanceInt = Int(distanceDouble)
-        let distance = distanceInt.formattedWithSeparator
-        cell.asteroisMissDistanceLabel.text = "на расстояние \(distance) км"
+        guard let distanceKMDouble = Double(distanceByKM) else {return cell }
+        guard let distanceLNDouble = Double(distanceByLunar) else {return cell }
         
+        let distanceKMInt = Int(distanceKMDouble)
+        let distanceLunInt = Int(distanceLNDouble)
         
+        let distanceKMString = distanceKMInt.formattedWithSeparator
+        
+        if UserDefaults.standard.integer(forKey: "unitsType") == 0 {
+            cell.asteroisMissDistanceLabel.text = "на расстояние \(distanceKMString) км"
+        } else {
+            cell.asteroisMissDistanceLabel.text = "на расстояние \(distanceLunInt) лунных орбит"
+        }
         
         
         cell.deleteButton.addTarget(self, action: #selector(deleteButton(_:)), for: .touchDown)
-        cell.layer.cornerRadius = 30
-        cell.backgroundColor = UIColor(red: 249 / 255, green: 249 / 255, blue: 249 / 255, alpha: 1.0)
-        cell.clipsToBounds = true
-        // требуется создание нижнего слоя для ячейки, что бы создать тень
-        //        cell.layer.shadowRadius = 4.0
-        //        cell.layer.shadowOpacity = 0.5
-        //        cell.layer.shadowOffset = CGSize(width: 2.0, height: 4.0)
+        //        cell.backgroundColor = .clear
+        
+        cell.layer.shadowRadius = 1.0
+        cell.layer.shadowOpacity = 0.3
+        cell.layer.shadowOffset = CGSize(width: 0.0, height: 1.5)
+        cell.backgroundLayer.layer.cornerRadius = 25
+        cell.backgroundLayer.clipsToBounds = true
         return cell
     }
     
     
     // MARK: UICollectionViewDelegate
     
- 
+    
     
     // MARK: Deleting cell method
     @objc func deleteButton(_ sender: UIButton!) {
-        if let cell = sender.superview?.superview?.superview as? AsteroidInfoCell, let indexPath = collectionView.indexPath(for: cell) {
+        if let cell = sender.superview?.superview?.superview?.superview as? AsteroidInfoCell, let indexPath = collectionView.indexPath(for: cell) {
             let removedValue = asteroidsArray.remove(at: indexPath.row)
-            deletedElements.append(removedValue)
+            DestroyViewController.array.append(removedValue)
             collectionView.deleteItems(at: [indexPath])
             collectionView.reloadData()
+            
         }
     }
     // MARK: Date formatter method
     
-    func formateDate(date: NSDate) -> String {
+    private  func formateDate(date: NSDate) -> String {
         let a = date
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = .short
@@ -142,7 +165,7 @@ class AsteroidViewController: UICollectionViewController {
     
     
     // MARK: Fetching method
-    func fetchData() {
+    private    func fetchData() {
         networkManager.asteriodRequest(urlString: stringUrl) { [weak self] (result) in
             switch result {
             case .success(let response):

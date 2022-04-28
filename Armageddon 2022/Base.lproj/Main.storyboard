@@ -6,6 +6,7 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,37 +19,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="bottom" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sip-gH-dfD">
-                                <rect key="frame" x="30" y="94" width="368" height="148"/>
+                                <rect key="frame" x="30" y="138" width="368" height="104"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5AU-fe-DrM">
-                                        <rect key="frame" x="0.0" y="0.0" width="368" height="70"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="368" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ед. изм. расстояний" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYm-EP-LSF">
-                                                <rect key="frame" x="0.0" y="25" width="220" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="13.999999999999998" width="220" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="tsU-wb-DVf">
-                                                <rect key="frame" x="228" y="19.666666666666671" width="140" height="32"/>
+                                                <rect key="frame" x="228" y="8.6666666666666572" width="140" height="32"/>
                                                 <segments>
                                                     <segment title="км"/>
                                                     <segment title="л.орб"/>
                                                 </segments>
+                                                <connections>
+                                                    <action selector="segmentControlAction:" destination="TEy-bW-jgB" eventType="valueChanged" id="45Q-bE-DSz"/>
+                                                </connections>
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P8C-bd-D8Z">
-                                        <rect key="frame" x="0.0" y="78" width="368" height="70"/>
+                                        <rect key="frame" x="0.0" y="56" width="368" height="48"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Показывать только опасные" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKY-he-SV0">
-                                                <rect key="frame" x="0.0" y="25" width="302.33333333333331" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="13.999999999999998" width="302.33333333333331" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="oN9-Jm-9KX">
-                                                <rect key="frame" x="310.33333333333331" y="19.666666666666657" width="59.666666666666686" height="31"/>
+                                                <rect key="frame" x="310.33333333333331" y="8.6666666666666572" width="59.666666666666686" height="31"/>
+                                                <connections>
+                                                    <action selector="switchControlAction:" destination="TEy-bW-jgB" eventType="valueChanged" id="yir-y3-wXs"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
@@ -60,39 +67,33 @@
                                     <constraint firstItem="5AU-fe-DrM" firstAttribute="leading" secondItem="sip-gH-dfD" secondAttribute="leading" id="h2v-dB-4UL"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WN7-6q-xLZ">
-                                <rect key="frame" x="20" y="44" width="58" height="30"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Назад" image="chevron.backward" catalog="system"/>
-                                <connections>
-                                    <action selector="backButton:" destination="TEy-bW-jgB" eventType="touchUpInside" id="rTV-4t-dh9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XrU-UW-W0F">
-                                <rect key="frame" x="327" y="44" width="81" height="30"/>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KCx-rB-e0b"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sip-gH-dfD" firstAttribute="top" secondItem="KCx-rB-e0b" secondAttribute="top" constant="50" id="UnZ-gO-aqI"/>
+                            <constraint firstItem="KCx-rB-e0b" firstAttribute="trailing" secondItem="sip-gH-dfD" secondAttribute="trailing" constant="30" id="htl-HE-cuu"/>
+                            <constraint firstItem="sip-gH-dfD" firstAttribute="leading" secondItem="KCx-rB-e0b" secondAttribute="leading" constant="30" id="igp-pT-Yhl"/>
+                            <constraint firstItem="KCx-rB-e0b" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="sip-gH-dfD" secondAttribute="bottom" constant="650" id="xJX-yM-nbN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="S4g-I2-rq8">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="CfV-ed-WT1">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="XrU-UW-W0F">
+                                <rect key="frame" x="327" y="7" width="81" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Применить"/>
                                 <connections>
                                     <action selector="setSettings:" destination="TEy-bW-jgB" eventType="touchUpInside" id="c5Q-nJ-E8J"/>
                                 </connections>
                             </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="KCx-rB-e0b"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="XrU-UW-W0F" firstAttribute="leading" relation="lessThanOrEqual" secondItem="WN7-6q-xLZ" secondAttribute="trailing" constant="249" id="ByG-7Y-xA8"/>
-                            <constraint firstItem="XrU-UW-W0F" firstAttribute="top" secondItem="KCx-rB-e0b" secondAttribute="top" id="D1x-9E-4Ez"/>
-                            <constraint firstItem="WN7-6q-xLZ" firstAttribute="top" secondItem="KCx-rB-e0b" secondAttribute="top" id="Fpn-CF-UTh"/>
-                            <constraint firstItem="sip-gH-dfD" firstAttribute="top" secondItem="XrU-UW-W0F" secondAttribute="bottom" constant="20" id="NGT-tM-zQI"/>
-                            <constraint firstItem="sip-gH-dfD" firstAttribute="top" secondItem="WN7-6q-xLZ" secondAttribute="bottom" constant="20" id="Ocs-vm-70g"/>
-                            <constraint firstItem="KCx-rB-e0b" firstAttribute="trailing" secondItem="XrU-UW-W0F" secondAttribute="trailing" constant="20" id="Qb3-Ep-h1F"/>
-                            <constraint firstItem="sip-gH-dfD" firstAttribute="top" secondItem="KCx-rB-e0b" secondAttribute="top" constant="50" id="UnZ-gO-aqI"/>
-                            <constraint firstItem="KCx-rB-e0b" firstAttribute="trailing" secondItem="sip-gH-dfD" secondAttribute="trailing" constant="30" id="htl-HE-cuu"/>
-                            <constraint firstItem="sip-gH-dfD" firstAttribute="leading" secondItem="KCx-rB-e0b" secondAttribute="leading" constant="30" id="igp-pT-Yhl"/>
-                            <constraint firstItem="WN7-6q-xLZ" firstAttribute="leading" secondItem="KCx-rB-e0b" secondAttribute="leading" constant="20" id="ssb-wC-eEc"/>
-                            <constraint firstItem="KCx-rB-e0b" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="sip-gH-dfD" secondAttribute="bottom" constant="650" id="xJX-yM-nbN"/>
-                        </constraints>
-                    </view>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentControlLabel" destination="tsU-wb-DVf" id="q40-AG-hkW"/>
+                        <outlet property="switchControlLabel" destination="oN9-Jm-9KX" id="cVc-ZK-hfd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKD-bu-jaJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,25 +102,27 @@
         <!--Астероиды 2022-->
         <scene sceneID="Bxg-LP-mpP">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xUB-RK-iwl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <collectionViewController id="kEs-TT-61x" customClass="AsteroidViewController" customModule="Armageddon_2022" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ys7-Mw-gwq">
+                    <collectionView key="view" autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" id="ys7-Mw-gwq">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="25" minimumInteritemSpacing="10" id="QHN-GL-Yof">
-                            <size key="itemSize" width="320" height="308"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="25" minimumInteritemSpacing="20" id="2Pt-b5-0jX">
+                            <size key="itemSize" width="310" height="308"/>
+                            <size key="estimatedItemSize" width="310" height="308"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="25"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="myCell" translatesAutoresizingMaskIntoConstraints="NO" id="Pqm-R7-dW5">
-                                <rect key="frame" x="54" y="0.0" width="320" height="308"/>
+                                <rect key="frame" x="59" y="0.0" width="310" height="308"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gln-Cy-mGl">
+                                    <rect key="frame" x="0.0" y="0.0" width="310" height="308"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                </view>
+                                </collectionViewCellContentView>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </collectionViewCell>
                         </cells>
@@ -136,7 +139,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="line.3.horizontal.decrease" catalog="system"/>
                                 <connections>
-                                    <segue destination="TEy-bW-jgB" kind="presentation" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="9Jv-11-oak"/>
+                                    <segue destination="TEy-bW-jgB" kind="show" id="9Jv-11-oak"/>
                                 </connections>
                             </button>
                             <connections>
@@ -146,7 +149,6 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xUB-RK-iwl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4443.75" y="-198.75"/>
         </scene>
@@ -235,7 +237,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="line.3.horizontal.decrease" catalog="system" width="128" height="73"/>
         <image name="trash" catalog="system" width="121" height="128"/>

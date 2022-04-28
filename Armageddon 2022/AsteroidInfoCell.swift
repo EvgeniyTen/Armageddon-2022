@@ -11,7 +11,8 @@ class AsteroidInfoCell: UICollectionViewCell {
     
     @IBOutlet weak var deleteButton: UIButton!
     
-    @IBOutlet weak var hazardColorLabel: UIView!
+    @IBOutlet weak var backgroundLayer: UIView!
+    @IBOutlet weak var hazardColorLabel: UIImageView!
     
     @IBOutlet weak var asteroidSizeLabel: UIImageView!
     @IBOutlet weak var asteroidNameLabel: UILabel!

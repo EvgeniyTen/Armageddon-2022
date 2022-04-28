@@ -8,14 +8,16 @@
 import UIKit
 
 class DestroyViewController: UITableViewController {
-
-    var array: [NearEarthObject] = []
     
+    
+    private let networkManager = NetworkManager()
+    
+    
+    static var array = [NearEarthObject]()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchArray()
-        
+        tableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -25,20 +27,21 @@ class DestroyViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return array.count
+     
+        return DestroyViewController.array.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "deletedAsteroids", for: indexPath) as! DeletedAsteriodsCell
+        let array = DestroyViewController.array
+        let hazard = array[indexPath.row].isPotentiallyHazardousAsteroid
+        cell.backgroundColor = hazard ? .systemRed : .systemGreen
         cell.deletedAsteroidName.text = array[indexPath.row].name
-        cell.backgroundColor = .systemIndigo
         return cell
     }
     
-    func fetchArray() {
-        let vc = AsteroidViewController(nibName: "AsteroidViewController", bundle: nil)
-        vc.deletedElements = array
-        tableView.reloadData()
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
